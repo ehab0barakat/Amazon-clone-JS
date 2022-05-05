@@ -1,0 +1,135 @@
+.navFooterBackToTop{
+    background-color:rgb(9, 9, 133);
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px;
+}
+.navFooterBackToTopText{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.navFooterLinkCol{    
+    background-color:rgb(3, 3, 45);
+    height:300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+.navFooterLinkBox{
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+}
+.navFooterLinkBox .h1style{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.navFooterLinkBox .ulstyle>li{
+    font-size: 20px;
+    margin-top: 5px;
+    list-style: none;
+}
+.ulstyle>li a{
+    color: rgb(215, 206, 206);
+    text-decoration: none;
+}
+.ulstyle>li a:hover{
+    text-decoration:underline
+}
+.cont_horizontal{
+    background-color:rgb(3, 3, 45);
+    height: 100px;
+}
+.horizontal{
+    background-color: gray;
+    height: 0.2px;
+}
+.logoAmazonFoot{
+    text-align: center;
+    margin-top: 30px;
+}
+.logoAmazonFoot a{
+    text-decoration: none;
+}
+.logoAmazonFoot i{
+    color: yellow;
+    font-size: 20px;   
+}
+.logoAmazonFoot span{
+    font-size: 30px;
+    color: white;
+    display: block;
+}
+.footerMoreAmazon{    
+    background-color:rgb(5, 5, 40);
+    height:350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+.navFooterMoreOnAmazon{
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+}
+.navFooterMoreOnAmazon .ulstyle1>li{
+    font-size: 20px;
+    margin-top: 5px;
+    list-style: none;
+}
+.navFooterMoreOnAmazon .ulstyle2>li{
+    font-size: 20px;
+    margin-top: 5px;
+    list-style: none;
+}
+.ulstyle1>li a{
+    color: rgb(215, 206, 206);
+    text-decoration: none;
+}
+.ulstyle1>li a:hover{
+    text-decoration:underline
+}
+.ulstyle2>li a{
+    color: rgb(215, 206, 206);
+    text-decoration: none;
+}
+.ulstyle2>li a:hover{
+    text-decoration:underline
+}
+.ulstyle1 .dif a{
+    color: white;
+}
+.ulstyle2 .dif a{
+    color: white;
+}
+.endFooter{
+    background-color:rgb(5, 5, 40);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.endFooter ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+.endFooter a{
+    text-decoration: none;
+    color: white;
+}
+.endFooter a:hover{
+    text-decoration: underline;
+}
+.endFooter .txt{
+    color: white;
+} 
+
+
+
+

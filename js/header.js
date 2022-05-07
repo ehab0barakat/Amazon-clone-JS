@@ -23,9 +23,7 @@ function search(se){
     }
     xhr_1.send()
 }
-
-
-document.addEventListener("keydown" , (event)=>{
+document.addEventListener("keydown",(event)=>{
     if (event.keyCode == 27) {
         $("body").css("overflow", "unset");
         $(".black").css("z-index","-1")
@@ -43,3 +41,9 @@ $("input[type='search']").on("click",()=>{
     $("body").css("overflow", "hidden");
     $(".black").css("z-index","5")
 })
+
+
+
+if(localStorage.productNum){
+    document.getElementById("prductNum").innerHTML = localStorage.productNum
+}

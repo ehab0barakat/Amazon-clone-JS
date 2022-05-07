@@ -77,3 +77,7 @@ xhr.send();
 
 
 
+
+if(localStorage.productNum){
+    document.getElementById("prductNum").innerHTML = localStorage.productNum
+}

@@ -12,9 +12,15 @@ function search(se){
         arr.map((el , index )=>{
            if ( arr[index].toLocaleLowerCase().includes(se) && $("input[type='search']").val() != "" && $("input[type='search']").val() != " " ){
 
-            string = `<div>${arr[index]}</div>`
+            string = `<div> ${arr[index]}</div>`
             x = `<span style="color:white ; background:grey" >${se}</span>`
-            $(".search_res").append(`<a href="../details.html" class="d_block" id='${index + 1}' <li class="no">${string.toLocaleLowerCase().replace(se,x)}</li></a>`)
+
+            pp = string.toLocaleLowerCase().replace(se,x).split(' ').map((el)=>{
+                return el[0].toUpperCase() + el.substring(1)
+            }).join(' ');
+
+            
+            $(".search_res").append(`<a href="../details.html" class="d_block" id='${index + 1}' <li class="no">${pp}</li></a>`)
 
            }
         })

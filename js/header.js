@@ -5,12 +5,17 @@ function search(se){
     if(xhr_1.readyState == 4 && xhr_1.status == 200){
         var data = JSON.parse(xhr_1.responseText)
         var arr = [];
+        $(".search_res").html('') ;
         for (x in data){
             arr.push(data[x].title)
         }
         arr.map((el , index )=>{
-           if ( arr[index].toLocaleLowerCase().startsWith(se) && $("input[type='search']").val() != "" && $("input[type='search']").val() != " " ){
-            $(".search_res").append(`<a href="../details.html" class="d_block" id='${index + 1}' <li class="no">${arr[index]}</li></a>`)
+           if ( arr[index].toLocaleLowerCase().includes(se) && $("input[type='search']").val() != "" && $("input[type='search']").val() != " " ){
+
+            string = `<div>${arr[index]}</div>`
+            x = `<span style="color:white ; background:grey" >${se}</span>`
+            $(".search_res").append(`<a href="../details.html" class="d_block" id='${index + 1}' <li class="no">${string.toLocaleLowerCase().replace(se,x)}</li></a>`)
+
            }
         })
         }
@@ -23,11 +28,12 @@ function search(se){
     xhr_1.send()
 }
 
+
+
 document.addEventListener("keydown",(event)=>{
     if (event.keyCode == 27) {
         $("body").css("overflow", "unset");
         $(".black").css("z-index","-1")
-        $(".search_res").html('') ;
         $(event.target).blur();
     }
 });

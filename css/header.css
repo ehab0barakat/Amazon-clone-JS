@@ -267,8 +267,10 @@ body{
 
 
 .d_block{
+    color:blue;
     display: block;
     padding:5px;
+    text-decoration: none;
 }
 
 .d_block:hover{

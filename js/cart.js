@@ -1,14 +1,15 @@
+
+
 var xxhr = new XMLHttpRequest ;
 xxhr.open('GET',"https://fakestoreapi.com/products" ,true)
 xxhr.onreadystatechange = ()=>{
     if(xxhr.readyState==4 && xxhr.status==200){
         var data = JSON.parse(xxhr.responseText)
-
         var allproduct = window.localStorage.allProducts.split(",")
+
         for (x of data) {
             for (y of allproduct) {
                 if (x.id == y){
-
                     $(".haha").append(`         
                     <div class="row_left">
                     <div class="side1">
@@ -54,12 +55,10 @@ xxhr.onreadystatechange = ()=>{
         document.querySelectorAll(".delete").forEach((el)=>{
             el.onclick = (x)=>{
                 el.closest(".row_left").remove()
-
                 localStorage.allProducts = localStorage.allProducts.split(",").filter((el)=>{
-                    return el != x.target.id
+                    return el != x.target.id  // عاوزين ترجع الارقام كلها م عدا  الرقم للى اتعمله delete
                 })
-
-                localStorage.productNum -= 1
+                localStorage.productNum -= 1 // شيلى رقم واحد من العداد
                 document.getElementById("prductNum").innerHTML = localStorage.productNum
             }
         })

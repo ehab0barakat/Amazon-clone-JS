@@ -21,13 +21,13 @@ h1 {
     font-size: 28px;
     line-height: 36px;
     display: block;
-    /* margin: 20px 0 7px 20px; */
+    margin: 20px 0 7px 20px;
     border-bottom: 1px solid #ddd;
 }
 
 .row_left {
     float: left;
-    margin: 20px 0 7px 20px;
+    margin: 20px 40px 7px 20px;
     width: 65%;
     height: auto;
     border: 1px solid #ddd;
@@ -38,7 +38,7 @@ h1 {
 
 .row_right {
     float: right;
-    margin: 20px 0 7px 20px;
+    margin: 20px 30px 7px 30px;
     width: 25%;
     height: 100%;
     border: 1px solid #ddd;
@@ -73,7 +73,7 @@ h1 {
     background-color: orange;
     cursor: pointer;
     border: 1px solid orange;
-    margin: 10px 50px 20px 50px;
+    margin: 10px 50px 20px 0px;
     padding: 10px 80px 10px 70px;
     border-radius: 10px;
 }
@@ -89,8 +89,10 @@ input.ba_btn[type="submit"]:hover {
 }
 
 .ba_paragraph{
-    margin-right: 123px;
-    margin-top: -227px;
+    /* margin-right: 123px;
+    margin-top: -227px; */
+    margin-left: 100px;
+    margin-top: -191px;
     list-style: none;
     padding: 0px;
 }
@@ -113,7 +115,7 @@ span>a{
     text-align: left;
     border: 1px solid rgb(218, 233, 240);
     background-color: rgb(218, 233, 240);
-    margin: 10px 30px 20px 8px;
+    margin: 10px 30px 20px 100px;
     padding: 10px 10px 10px 20px; 
     border-radius: 10px;
 }

@@ -3,7 +3,6 @@ xhr.open('GET',"https://fakestoreapi.com/products" ,true)
 xhr.onreadystatechange = ()=>{
     if(xhr.readyState==4 && xhr.status==200){
         var data = JSON.parse(xhr.responseText)
-
         for(x in data){
             $(".eh_grid").append(
             `<div class="product" id="${data[x].id}">
@@ -20,7 +19,6 @@ xhr.onreadystatechange = ()=>{
           )
         }
     }
-
     document.querySelectorAll(".overlay").forEach((element) => {    
         element.onclick=()=>{
             window.localStorage.describtion = element.parentElement.id
@@ -30,3 +28,7 @@ xhr.onreadystatechange = ()=>{
     });
 }
 xhr.send();
+
+// if(localStorage.productNum){
+//     document.getElementById("prductNum").innerHTML = localStorage.productNum
+// }

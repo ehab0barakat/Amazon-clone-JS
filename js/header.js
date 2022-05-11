@@ -2,7 +2,6 @@
 
 
 
-
 function search(se){
     var xhr_1 = new XMLHttpRequest ;
     xhr_1.open('GET',`https://fakestoreapi.com/products` ,true)
@@ -10,7 +9,7 @@ function search(se){
     if(xhr_1.readyState == 4 && xhr_1.status == 200){
         var data = JSON.parse(xhr_1.responseText)
         var arr = [];
-        $(".search_res").html('') ;
+        $(".search_res").html('')
         for (x in data){
             arr.push(data[x].title)
         }
@@ -60,9 +59,26 @@ document.addEventListener("keydown",(event)=>{
 
 $(".black").on("click", () => kill_search() )
 
+var searchTimeout ;
+
 $("input[type='search']").on("keyup",(x)=>{
-    $(".search_res").html('') ;
-    search($(x.target).val())
+    $(".search_res").html(`
+
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>`
+        
+    ) ;
+
+    clearTimeout(searchTimeout)
+    searchTimeout = setTimeout(() =>{
+        search($(x.target).val())
+    },300)
+
 })
 
 $("input[type='search']").on("click",()=>{

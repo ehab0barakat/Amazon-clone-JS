@@ -68,12 +68,12 @@ xxhr.onreadystatechange = ()=>{
                 </div>`);
                 allPrices += x.price ;
                 }
-                $(".ba_box h2").html(`Subtotal (${localStorage.productNum} item):<span style="font-weight: bold;font-size:18px;font-family: Verdana;">EGP ${allPrices}</span>`)
+                $(".ba_box h2").html(`Subtotal (${localStorage.productNum} item):<span style="font-weight: bold;font-size:18px;font-family: Verdana;">EGP ${allPrices.toFixed(2)}</span>`)
             }
         }
 
         document.querySelectorAll(".delete").forEach((el)=>{
-            abstractPrices = 0;
+            var abstractPrices = 0;
             el.onclick = (x)=>{
                 localStorage.allProducts = localStorage.allProducts.split(",").filter((el)=>{
                     return el != x.target.id  // عاوزين ترجع الارقام كلها م عدا  الرقم للى اتعمله delete

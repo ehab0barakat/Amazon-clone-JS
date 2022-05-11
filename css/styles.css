@@ -185,6 +185,11 @@ body{
     height: 283px;
 }
 
+
+.carousel-inner{
+    z-index: -1;
+}
+
 .carousel-control-prev:hover,
 .carousel-control-next:hover{
     border: 3px solid white;
@@ -362,11 +367,6 @@ body{
     z-index: 1000;
 }
 /* ------------------ loading spinner ------------------------  */
-
-
-#carouselExampleControls{
-    z-index:-1
-}
 
 
 

@@ -1,11 +1,15 @@
 document.getElementsByClassName("price")[0].innerHTML = "$----";
 // ------------------------------------
+$("body").css("overflow", "hidden");
 
 var xxhr = new XMLHttpRequest ;
 xxhr.open('GET',"https://fakestoreapi.com/products" ,true)
 xxhr.onreadystatechange = ()=>{
     if(xxhr.readyState==4 && xxhr.status==200){
         var data = JSON.parse(xxhr.responseText)
+        $(".allll").fadeOut();
+        $("body").css("overflow", "unset");
+
         document.getElementById("imgId").src =data[localStorage.describtion - 1 ].image
         document.querySelector("#se2 h1").innerHTML = data[localStorage.describtion - 1 ].title
         document.querySelector(".price").innerHTML = `${data[localStorage.describtion - 1 ].price}$`

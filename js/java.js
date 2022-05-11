@@ -1,8 +1,14 @@
+$("body").css("overflow", "hidden");
+
 var xhr = new XMLHttpRequest ;
 xhr.open('GET',"https://fakestoreapi.com/products" ,true)
 xhr.onreadystatechange = ()=>{
     if(xhr.readyState==4 && xhr.status==200){
         var data = JSON.parse(xhr.responseText)
+
+        $(".allll").fadeOut();
+        $("body").css("overflow", "unset");
+
         for(x in data){
             $(".eh_grid").append(
             `<div class="product" id="${data[x].id}">
@@ -28,7 +34,3 @@ xhr.onreadystatechange = ()=>{
     });
 }
 xhr.send();
-
-// if(localStorage.productNum){
-//     document.getElementById("prductNum").innerHTML = localStorage.productNum
-// }

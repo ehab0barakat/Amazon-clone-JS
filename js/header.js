@@ -1,3 +1,8 @@
+
+
+
+
+
 function search(se){
     var xhr_1 = new XMLHttpRequest ;
     xhr_1.open('GET',`https://fakestoreapi.com/products` ,true)
@@ -18,12 +23,15 @@ function search(se){
             pp = string.toLocaleLowerCase().replace(se,x).split(' ').map((el)=>{
                 return el[0].toUpperCase() + el.substring(1)
             }).join(' ');
-
-            
             $(".search_res").append(`<a href="../details.html" class="d_block" id='${index + 1}' <li class="no">${pp}</li></a>`)
-
-           }
+            
+        }
         })
+        
+        if($(".search_res").children().length == 0 && $("input[type='search']").val() != "" && $("input[type='search']").val() != " "  ){
+            $(".search_res").html('') ;
+            $(".search_res").append(`<div href="#" class="d_block" <li class="no"> There is not such a result </li></a>`)
+        }
         }
         document.querySelectorAll(".d_block").forEach((el) => {
             el.onclick=()=>{
@@ -35,14 +43,22 @@ function search(se){
 }
 
 
+function kill_search(){
+    $("body").css("overflow", "unset");
+    $(".black").css("z-index","-1")
+    $("input[type='search']").val("")
+    $("input[type='search']").blur();
+}
+
 
 document.addEventListener("keydown",(event)=>{
     if (event.keyCode == 27) {
-        $("body").css("overflow", "unset");
-        $(".black").css("z-index","-1")
-        $(event.target).blur();
+        kill_search()
     }
 });
+
+
+$(".black").on("click", () => kill_search() )
 
 $("input[type='search']").on("keyup",(x)=>{
     $(".search_res").html('') ;
@@ -57,3 +73,13 @@ $("input[type='search']").on("click",()=>{
 if(localStorage.productNum){
     document.getElementById("prductNum").innerHTML = localStorage.productNum
 }
+
+
+
+
+
+
+// -------------------------loading
+
+
+

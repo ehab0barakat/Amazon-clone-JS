@@ -73,7 +73,7 @@ xxhr.onreadystatechange = ()=>{
         }
 
         document.querySelectorAll(".delete").forEach((el)=>{
-             abstractPrices = 0;
+            abstractPrices = 0;
             el.onclick = (x)=>{
                 localStorage.allProducts = localStorage.allProducts.split(",").filter((el)=>{
                     return el != x.target.id  // عاوزين ترجع الارقام كلها م عدا  الرقم للى اتعمله delete

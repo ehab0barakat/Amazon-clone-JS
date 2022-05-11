@@ -1,15 +1,19 @@
-
-
-
+function clear(){
+    if ($("input[type='search']").val() == "" || $("input[type='search']").val() == " "){
+        $(".search_res").css("display","none")}
+    
+    else{$(".search_res").css("display","block")}
+}
 
 function search(se){
     var xhr_1 = new XMLHttpRequest ;
+    clear() ;
     xhr_1.open('GET',`https://fakestoreapi.com/products` ,true)
     xhr_1.onreadystatechange = ()=>{
-    if(xhr_1.readyState == 4 && xhr_1.status == 200){
-        var data = JSON.parse(xhr_1.responseText)
-        var arr = [];
-        $(".search_res").html('')
+        if(xhr_1.readyState == 4 && xhr_1.status == 200){
+            var data = JSON.parse(xhr_1.responseText)
+            $(".search_res").html('')
+            var arr = [];
         for (x in data){
             arr.push(data[x].title)
         }
@@ -23,11 +27,12 @@ function search(se){
                 return el[0].toUpperCase() + el.substring(1)
             }).join(' ');
             $(".search_res").append(`<a href="../details.html" class="d_block" id='${index + 1}' <li class="no">${pp}</li></a>`)
-            
         }
         })
+
         
-        if($(".search_res").children().length == 0 && $("input[type='search']").val() != "" && $("input[type='search']").val() != " "  ){
+        if($(".search_res").children().length == 0  && $("input[type='search']").val() != "" && $("input[type='search']").val() != " " ){
+
             $(".search_res").html('') ;
             $(".search_res").append(`<div href="#" class="d_block" <li class="no"> There is not such a result </li></a>`)
         }
@@ -71,7 +76,7 @@ $("input[type='search']").on("keyup",(x)=>{
             <div class="rect4"></div>
             <div class="rect5"></div>
         </div>`
-        
+
     ) ;
 
     clearTimeout(searchTimeout)
@@ -82,6 +87,7 @@ $("input[type='search']").on("keyup",(x)=>{
 })
 
 $("input[type='search']").on("click",()=>{
+    clear()
     $("body").css("overflow", "hidden");
     $(".black").css("z-index","5")
 })
